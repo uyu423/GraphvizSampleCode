@@ -1,0 +1,19 @@
+//RE : [+|-]{0,1}[0-9]+
+digraph letterDigitNFA {
+	rankdir=LR;
+	input->0;
+	0->1 [label="letter"];
+	1->2 [label="ε"];
+	1->4 [label="ε"];
+	2->5 [label="ε"];
+	2->7 [label="ε"];
+	5->6 [label="letter"];
+	7->8 [label="digit"];
+	6->3 [label="ε"];
+	8->3 [label="ε"];
+	3->2 [label="ε"];
+	3->4 [label="ε"];
+	input [peripheries=0];
+	4 [peripheries=2];
+}
+
