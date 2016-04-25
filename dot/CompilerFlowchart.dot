@@ -1,0 +1,25 @@
+digraph compilerFlowchart {
+//	rankdir=LR;
+	{
+		sourceCode [label="소스 코드\n(Source Code)", peripheries=0];
+		lexicalAnalysis [label="어휘 분석기\nLexical Analysis", shape="square"];
+		syntaxAnalysis [label="구문 분석기\nSyntax Analysis", shape="square"];
+		semanticAnalysis [label="어의 분석기\nSemantic Analysis", shape="square"];
+		sourceCodeOptimizer [label="코드 최적화\nSource Code\nGenerator", shape="square"];
+		codeGenerator [label="코드 생성기\nCode Generator", shape="square"];
+		targetCodeOptimizer [label="목적코드 최적기\nTarget Code\nGenerator", shape="square"];
+		targetCode [label="목적 코드\n(Target Code)", peripheries=0];
+
+		literalTable [label="리터럴 테이블\nLiteral Table", shape="rectangle"];
+		symbolTable [label="심볼 테이블\nSymbol Table", shape="rectangle"];
+		errorHandler [label="에러 처리기\nError Handler", shape="rectangle"];
+	}
+	{rank=same literalTable symbolTable errorHandler}->{rank=same sourceCode lexicalAnalysis syntaxAnalysis semanticAnalysis}->{rank=same sourceCodeOptimizer codeGenerator targetCodeOptimizer targetCode} [style=invis]
+	sourceCode->lexicalAnalysis;
+	lexicalAnalysis->syntaxAnalysis [label="토큰\n(Token)"];
+	syntaxAnalysis->semanticAnalysis [label="구문 트리\n(Syntax Tree)"];
+	semanticAnalysis->sourceCodeOptimizer [label="장식 트리\n(Anotate Tree)"];
+	sourceCodeOptimizer->codeGenerator [label="중간 코드"];
+	codeGenerator->targetCodeOptimizer [label="목적 코드\n(Target Code)"];
+	targetCodeOptimizer->targetCode;
+}
