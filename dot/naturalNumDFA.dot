@@ -1,7 +1,7 @@
 //RE : [+|-]{0,1}[0-9]+
 digraph naturalNumberDFA {
 	rankdir=LR;
-	0 -> 1 [label="+ or -"];
+	0 -> 1 [label="+"];
 	0 -> 2 [label="1~9"];
 	1 -> 2 [label="1~9"];
 	2 -> 3 [label="0~9"];

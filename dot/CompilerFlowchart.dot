@@ -5,9 +5,9 @@ digraph compilerFlowchart {
 		lexicalAnalysis [label="어휘 분석기\nLexical Analysis", shape="square"];
 		syntaxAnalysis [label="구문 분석기\nSyntax Analysis", shape="square"];
 		semanticAnalysis [label="어의 분석기\nSemantic Analysis", shape="square"];
-		sourceCodeOptimizer [label="코드 최적화\nSource Code\nGenerator", shape="square"];
+		sourceCodeOptimizer [label="코드 최적화\nSource Code\nOptimizer", shape="square"];
 		codeGenerator [label="코드 생성기\nCode Generator", shape="square"];
-		targetCodeOptimizer [label="목적코드 최적기\nTarget Code\nGenerator", shape="square"];
+		targetCodeOptimizer [label="목적코드 최적기\nTarget Code\nOptimizer", shape="square"];
 		targetCode [label="목적 코드\n(Target Code)", peripheries=0];
 
 		literalTable [label="리터럴 테이블\nLiteral Table", shape="rectangle"];
